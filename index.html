@@ -14,23 +14,38 @@
     body {
       font-family: 'Roboto', sans-serif;
       padding-top: 70px;
+      background-color: #f4f7f9;
+      color: #333;
     }
     header {
       background-color: #0073e6;
       color: white;
-      padding: 50px 0;
+      padding: 60px 20px;
       text-align: center;
+      position: relative;
     }
     header h1 {
+      font-size: 3.5rem;
       font-weight: 700;
+      margin-bottom: 20px;
     }
-    .project img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
+    header p {
+      font-size: 1.3rem;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    section {
+      padding: 60px 0;
+    }
+    .card {
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     footer {
-      background-color: #f8f9fa;
+      background-color: #eef2f7;
       padding: 20px 0;
       text-align: center;
       color: #777;
@@ -59,8 +74,8 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <h1>Welcome to My DIY Hardware Projects</h1>
-      <p class="lead">I develop products from concept to reality—schematics, PCB design, firmware, manufacturing and certifications.</p>
+      <h1 class="display-1">Gaurang Solanki</h1>
+      <p class="lead">Hardware Engineer &amp; Product Developer – Bringing Ideas from Concept to Reality</p>
     </div>
   </header>
 
@@ -69,7 +84,10 @@
     <div class="container">
       <h2 class="mb-4">About Me</h2>
       <p>
-        I'm Gaurang Solanki, a hardware engineer and product developer. I specialize in designing detailed schematics, crafting precise PCB layouts, and developing tailored firmware. I manage the entire production process, including sourcing manufacturers in China and handling certifications such as CE, FCC, and ISED through accredited testing labs. I also create comprehensive documentation, including user manuals and assembly guides, ensuring quality products that truly make a difference.
+        I'm a dedicated hardware engineer specializing in designing detailed schematics, crafting precise PCB layouts, and developing tailored firmware. I oversee the entire production process—from sourcing and collaborating with manufacturers in China to navigating regulatory certifications like CE, FCC, and ISED through accredited testing labs.
+      </p>
+      <p>
+        In addition, I create comprehensive documentation—including user manuals and assembly guides—ensuring that every product is as user-friendly as it is innovative. My commitment is to build quality products that make a real difference.
       </p>
     </div>
   </section>
@@ -81,33 +99,33 @@
       <div class="row">
         <!-- Project 1 -->
         <div class="col-md-4 mb-4">
-          <div class="card project">
+          <div class="card">
             <img src="project1.jpg" class="card-img-top" alt="Project 1 Image">
             <div class="card-body">
               <h5 class="card-title">Project 1</h5>
-              <p class="card-text">Brief description of Project 1. Showcase key aspects such as schematic design, PCB layout, and firmware implementation.</p>
+              <p class="card-text">A brief description of Project 1 showcasing schematics, PCB design, and firmware development.</p>
               <a href="#" class="btn btn-primary">Learn More</a>
             </div>
           </div>
         </div>
         <!-- Project 2 -->
         <div class="col-md-4 mb-4">
-          <div class="card project">
+          <div class="card">
             <img src="project2.jpg" class="card-img-top" alt="Project 2 Image">
             <div class="card-body">
               <h5 class="card-title">Project 2</h5>
-              <p class="card-text">Brief description of Project 2, highlighting the challenges and solutions implemented during production.</p>
+              <p class="card-text">A brief description of Project 2 highlighting the production process and certification journey.</p>
               <a href="#" class="btn btn-primary">Learn More</a>
             </div>
           </div>
         </div>
         <!-- Project 3 -->
         <div class="col-md-4 mb-4">
-          <div class="card project">
+          <div class="card">
             <img src="project3.jpg" class="card-img-top" alt="Project 3 Image">
             <div class="card-body">
               <h5 class="card-title">Project 3</h5>
-              <p class="card-text">Brief description of Project 3, including insights into the certification process and assembly guides.</p>
+              <p class="card-text">A brief description of Project 3 including design innovations and documentation efforts.</p>
               <a href="#" class="btn btn-primary">Learn More</a>
             </div>
           </div>
@@ -125,7 +143,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="mt-5">
+  <footer>
     <div class="container">
       <p>© 2025 Gaurang Solanki. All rights reserved.</p>
     </div>
