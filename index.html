@@ -2,78 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gaurang Solanki's DIY Hardware Projects</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      color: #333;
+      font-family: 'Roboto', sans-serif;
+      padding-top: 70px;
     }
     header {
+      background-color: #0073e6;
+      color: white;
+      padding: 50px 0;
       text-align: center;
-      padding: 20px;
     }
-    nav {
-      text-align: center;
-      margin: 20px 0;
+    header h1 {
+      font-weight: 700;
     }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #0073e6;
-    }
-    section {
-      margin-bottom: 40px;
+    .project img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
     }
     footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
       text-align: center;
-      font-size: 0.9em;
       color: #777;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My DIY Hardware Projects</h1>
-    <p>Hello, I'm Gaurang Solanki – a Hardware Engineer and Product Developer.</p>
-  </header>
-  
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Gaurang Solanki</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I specialize in taking ideas from concept to reality. My process starts with designing detailed schematics and crafting precise PCB layouts.
-      I develop tailored firmware to bring these designs to life, and I manage the entire production process – including sourcing and collaborating 
-      with manufacturers. I also navigate the complexities of regulatory certification such as CE, FCC, and ISED through accredited testing labs.
-    </p>
-    <p>
-      Additionally, I create comprehensive documentation—including user manuals and assembly guides—to ensure the final product is easy to use and understand.
-      Whether it's an innovative gadget or a sophisticated hardware solution, I'm dedicated to building quality products that truly make a difference.
-    </p>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Welcome to My DIY Hardware Projects</h1>
+      <p class="lead">I develop products from concept to reality—schematics, PCB design, firmware, manufacturing and certifications.</p>
+    </div>
+  </header>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">About Me</h2>
+      <p>
+        I'm Gaurang Solanki, a hardware engineer and product developer. I specialize in designing detailed schematics, crafting precise PCB layouts, and developing tailored firmware. I manage the entire production process, including sourcing manufacturers in China and handling certifications such as CE, FCC, and ISED through accredited testing labs. I also create comprehensive documentation, including user manuals and assembly guides, ensuring quality products that truly make a difference.
+      </p>
+    </div>
   </section>
-  
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>Project 1: [Project Title] – [Brief description and link if available]</li>
-      <li>Project 2: [Project Title] – [Brief description and link if available]</li>
-      <li>Project 3: [Project Title] – [Brief description and link if available]</li>
-    </ul>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Projects</h2>
+      <div class="row">
+        <!-- Project 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card project">
+            <img src="project1.jpg" class="card-img-top" alt="Project 1 Image">
+            <div class="card-body">
+              <h5 class="card-title">Project 1</h5>
+              <p class="card-text">Brief description of Project 1. Showcase key aspects such as schematic design, PCB layout, and firmware implementation.</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card project">
+            <img src="project2.jpg" class="card-img-top" alt="Project 2 Image">
+            <div class="card-body">
+              <h5 class="card-title">Project 2</h5>
+              <p class="card-text">Brief description of Project 2, highlighting the challenges and solutions implemented during production.</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card project">
+            <img src="project3.jpg" class="card-img-top" alt="Project 3 Image">
+            <div class="card-body">
+              <h5 class="card-title">Project 3</h5>
+              <p class="card-text">Brief description of Project 3, including insights into the certification process and assembly guides.</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Connect with me on <a href="https://www.linkedin.com/in/gsoo7" target="_blank">LinkedIn</a>.</p>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Contact Me</h2>
+      <p>Connect with me on <a href="https://www.linkedin.com/in/gsoo7" target="_blank">LinkedIn</a>.</p>
+    </div>
   </section>
-  
-  <footer>
-    <p>© 2025 Gaurang Solanki. All rights reserved.</p>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="container">
+      <p>© 2025 Gaurang Solanki. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
