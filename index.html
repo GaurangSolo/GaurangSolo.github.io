@@ -47,11 +47,12 @@
 
     <style>
       .typing-text {
-        display: inline-block;
+        display: inline-block; /* Changed from block to inline-block if needed, or keep block */
         overflow: hidden;
         border-right: .15em solid white; /* Typing caret */
-        white-space: nowrap;
+        /* white-space: nowrap; */ /* <-- REMOVED THIS LINE */
         width: 0; /* Start with zero width */
+        vertical-align: bottom; /* Optional: Adjust alignment if needed after wrap */
         /* Animation is applied via utility class 'animate-typing' from config */
       }
       html.dark .typing-text {
@@ -117,8 +118,7 @@
   <div class="absolute inset-0 bg-black opacity-50"></div>
   <div class="relative container mx-auto text-center z-10">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">Gaurang Solanki</h1>
-    <p class="text-lg sm:text-xl md:text-2xl">
-        <span class="typing-text animate-typing">Hardware Engineer & Product Developer – Turning Concepts into Reality...</span>
+    <p class="text-lg sm:text-xl md:text-2xl leading-relaxed"> <span class="typing-text animate-typing">Hardware Engineer & Product Developer – Turning Concepts into Reality...</span>
     </p>
   </div>
 </header>
