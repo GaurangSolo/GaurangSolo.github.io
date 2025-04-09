@@ -33,7 +33,7 @@
               },
               'blink-caret': {
                 'from, to': { borderColor: 'transparent' },
-                '50%': { borderColor: 'white' }
+                '50%': { borderColor: 'white' } // Color of the caret
               },
               fadeInDown: {
                  'from': { opacity: 0, transform: 'translateY(-20px)' },
@@ -45,9 +45,10 @@
               }
             },
             animation: {
-              typing: 'typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite',
+              // Apply typing and blinking caret animation
+              typing: 'typing 3s steps(45, end) forwards, blink-caret 0.75s step-end infinite', // Adjusted steps slightly for new text length
               fadeInDown: 'fadeInDown 1s ease-out',
-              fadeInUp: 'fadeInUp 1s ease-in-out' // Used by AOS, but can be custom if needed
+              fadeInUp: 'fadeInUp 1s ease-in-out'
             }
           }
         }
@@ -59,6 +60,7 @@
     <style>
       @font-face {
         font-family: 'LucideIcons';
+        /* Usejsdelivr CDN for Lucide font */
         src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
       }
       .lucide {
@@ -69,14 +71,14 @@
         vertical-align: middle;
         margin-right: 0.25rem; /* Add space between icon and text */
       }
-      /* Custom style for typing animation */
+      /* Custom style for typing animation element */
       .typing-text {
-        display: inline-block;
-        overflow: hidden;
-        border-right: .15em solid white; /* Adjust color if needed */
-        white-space: nowrap;
-        width: 0;
-        animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+        display: inline-block; /* Ensures element width fits content */
+        overflow: hidden; /* Hides text until revealed by animation */
+        border-right: .15em solid white; /* Simulates the typing caret */
+        white-space: nowrap; /* Keeps text on a single line */
+        width: 0; /* Starts with zero width */
+        /* Animation is applied via Tailwind config */
       }
     </style>
 </head>
@@ -123,7 +125,7 @@
   <div class="relative container mx-auto text-center z-10">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">Gaurang Solanki</h1>
     <p class="text-lg sm:text-xl md:text-2xl">
-        <span class="typing-text">Hardware Engineer & Product Developer – Turning Concepts into Reality</span>
+        <span class="typing-text animate-typing">Hardware Engineer & Product Developer – Turning Concepts into Reality...</span>
     </p>
   </div>
 </header>
@@ -132,7 +134,7 @@
   <div class="container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">About Me</h2>
     <p class="text-lg text-gray-700 mb-4 max-w-3xl mx-auto text-center">
-      I'm a dedicated hardware engineer specializing in designing detailed schematics, crafting precise PCB layouts, and developing tailored firmware. I oversee the entire production process—from sourcing and collaborating with manufacturers to navigating regulatory certifications like CE, FCC, and ISED through accredited testing labs.
+      I'm a dedicated hardware engineer specializing in designing detailed schematics, crafting precise PCB layouts, and developing tailored firmware. I oversee the entire production process—from sourcing and collaborating with manufacturers in China to navigating regulatory certifications like CE, FCC, and ISED through accredited testing labs.
     </p>
     <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center">
       Additionally, I create comprehensive documentation—including user manuals and assembly guides—to ensure that every product is as user-friendly as it is innovative.
@@ -198,13 +200,13 @@
             Interested in collaborating or learning more about my work? Feel free to reach out!
         </p>
         <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
-            <a href="mailto:gaurang.slnk.007@gmail.com" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
-                <span class="lucide" aria-hidden="true">&#xe330;</span> <span class="font-medium">Gmail</span>
+            <a href="mailto:your.email@example.com" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
+                <span class="lucide" aria-hidden="true">&#xe330;</span> <span class="font-medium">your.email@example.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/gsoo7/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
                 <span class="lucide" aria-hidden="true">&#xe449;</span> <span class="font-medium">LinkedIn</span>
             </a>
-            <a href="https://github.com/GaurangSolo" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
+            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
                 <span class="lucide" aria-hidden="true">&#xe43e;</span> <span class="font-medium">GitHub</span>
             </a>
             </div>
@@ -247,7 +249,21 @@
 
   // Close mobile menu when a link is clicked
   mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => { // Added event parameter
+        // Smooth scroll for internal links
+        if (link.getAttribute('href').startsWith('#')) {
+            e.preventDefault(); // Prevent default jump
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Calculate position, considering the fixed navbar height (approx 64px or 4rem)
+                const offsetTop = targetElement.offsetTop - 64;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
         // Ensure menu actually closes on link click
         if (menuButton.getAttribute('aria-expanded') === 'true') {
             menuButton.setAttribute('aria-expanded', 'false');
@@ -259,6 +275,23 @@
         }
     });
   });
+
+  // Add smooth scroll for desktop menu links too
+  document.querySelectorAll('nav .hidden.md\\:block a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+              const offsetTop = targetElement.offsetTop - 64; // Adjust for 4rem/64px navbar height
+              window.scrollTo({
+                  top: offsetTop,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
+
 
 </script>
 </body>
