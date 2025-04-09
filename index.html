@@ -11,10 +11,13 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Gaurang Solanki's Hardware Engineering Portfolio">
     <meta property="og:description" content="Explore professional hardware projects from schematics to certification by Gaurang Solanki.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <meta property="og:url" content="https://your-portfolio-url.com"> <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <meta property="og:url" content="https://your-portfolio-url.com"> <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gaurang Solanki's Hardware Engineering Portfolio">
     <meta name="twitter:description" content="Explore professional hardware projects from schematics to certification by Gaurang Solanki.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       // Optional: Configure Tailwind CSS
       tailwind.config = {
@@ -64,6 +67,7 @@
         line-height: 1;
         display: inline-block;
         vertical-align: middle;
+        margin-right: 0.25rem; /* Add space between icon and text */
       }
       /* Custom style for typing animation */
       .typing-text {
@@ -76,7 +80,7 @@
       }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans pt-16"> {/* Added padding-top for fixed navbar */}
+<body class="bg-gray-100 text-gray-800 font-sans pt-16">
 
 <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,15 +95,12 @@
           <a href="#contact" class="text-gray-600 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
         </div>
       </div>
-      {/* Mobile Menu Button */}
       <div class="-mr-2 flex md:hidden">
         <button id="mobile-menu-button" type="button" class="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
-          {/* Icon when menu is closed. */}
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
-          {/* Icon when menu is open. */}
           <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -108,7 +109,6 @@
     </div>
   </div>
 
-  {/* Mobile menu, show/hide based on menu state. */}
   <div class="md:hidden hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       <a href="#about" class="text-gray-600 hover:bg-gray-200 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">About Me</a>
@@ -119,9 +119,7 @@
 </nav>
 
 <header class="relative bg-cover bg-center text-white py-24 px-4 sm:px-6 lg:px-8" style="background-image: url('https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-  {/* Overlay */}
   <div class="absolute inset-0 bg-black opacity-50"></div>
-  {/* Content */}
   <div class="relative container mx-auto text-center z-10">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">Gaurang Solanki</h1>
     <p class="text-lg sm:text-xl md:text-2xl">
@@ -147,54 +145,49 @@
     <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      {/* Project 1 Card */}
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
         <img src="https://placehold.co/600x400/e2e8f0/334155?text=Project+1+Image"
              onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';"
              class="w-full h-48 object-cover" alt="Smart Home Monitor Project Image">
-        <div class="p-6">
+        <div class="p-6 flex flex-col flex-grow">
           <h5 class="text-xl font-semibold mb-2 text-gray-900">Smart Home Temperature and Humidity Monitor</h5>
           <p class="text-gray-700 text-sm mb-3">Using the STM32F4, this device monitors temperature and humidity with a DHT22 sensor and sends data to a mobile app via WiFi using an ESP8266.</p>
           <p class="text-sm text-gray-600 mb-1"><strong>PCB Design:</strong> Integrated STM32F4, DHT22, and ESP8266.</p>
           <p class="text-sm text-gray-600 mb-1"><strong>Schematic:</strong> Features connections for sensors and WiFi.</p>
           <p class="text-sm text-gray-600 mb-3"><strong>Firmware:</strong> STM32 HAL for sensor interfacing, HTTP for cloud.</p>
-          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300">Learn More</a>
+          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300 mt-auto self-start">Learn More</a>
         </div>
       </div>
 
-      {/* Project 2 Card */}
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl flex flex-col" data-aos="fade-up" data-aos-delay="200">
         <img src="https://placehold.co/600x400/dbeafe/1e3a8a?text=Project+2+Image"
              onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';"
              class="w-full h-48 object-cover" alt="IoT Weather Station Project Image">
-        <div class="p-6">
+        <div class="p-6 flex flex-col flex-grow">
           <h5 class="text-xl font-semibold mb-2 text-gray-900">IoT-Based Weather Station</h5>
           <p class="text-gray-700 text-sm mb-3">This project uses an ESP32 to gather weather data from a BMP180 barometer and CCS811 air quality sensor, sending data to a cloud server via MQTT.</p>
           <p class="text-sm text-gray-600 mb-1"><strong>PCB Design:</strong> ESP32 with BMP180 and CCS811 integration.</p>
           <p class="text-sm text-gray-600 mb-1"><strong>Schematic:</strong> Includes sensor connections and level shifting.</p>
           <p class="text-sm text-gray-600 mb-3"><strong>Firmware:</strong> Arduino IDE, MQTT protocol for cloud.</p>
-          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300">Learn More</a>
+          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300 mt-auto self-start">Learn More</a>
         </div>
       </div>
 
-      {/* Project 3 Card */}
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl flex flex-col" data-aos="fade-up" data-aos-delay="300">
         <img src="https://placehold.co/600x400/ccfbf1/115e59?text=Project+3+Image"
              onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';"
              class="w-full h-48 object-cover" alt="Home Automation Relay Controller Project Image">
-        <div class="p-6">
+        <div class="p-6 flex flex-col flex-grow">
           <h5 class="text-xl font-semibold mb-2 text-gray-900">Home Automation Relay Controller</h5>
           <p class="text-gray-700 text-sm mb-3">An RP2040-based system that controls appliances via relays, using an RF remote control interface and safety mechanisms.</p>
           <p class="text-sm text-gray-600 mb-1"><strong>PCB Design:</strong> Integrated RP2040, 4 relays, opto-isolators.</p>
           <p class="text-sm text-gray-600 mb-1"><strong>Schematic:</strong> Features relay control and power circuits.</p>
           <p class="text-sm text-gray-600 mb-3"><strong>Firmware:</strong> MicroPython for relay control and WiFi.</p>
-          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300">Learn More</a>
+          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300 mt-auto self-start">Learn More</a>
         </div>
       </div>
 
-      {/* Add more project cards here following the same structure */}
-
-    </div>
+      </div>
   </div>
 </section>
 
@@ -204,22 +197,17 @@
         <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
             Interested in collaborating or learning more about my work? Feel free to reach out!
         </p>
-        <div class="flex justify-center items-center space-x-6">
-            {/* Replace '#' with actual links */}
-            <a href="mailto:your.email@example.com" class="text-indigo-600 hover:text-indigo-800 transition duration-300 flex items-center space-x-2">
-                <span class="lucide" aria-hidden="true">&#xe330;</span> {/* mail icon */}
-                <span class="font-medium">your.email@example.com</span>
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
+            <a href="mailto:your.email@example.com" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
+                <span class="lucide" aria-hidden="true">&#xe330;</span> <span class="font-medium">your.email@example.com</span>
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 flex items-center space-x-2">
-                <span class="lucide" aria-hidden="true">&#xe449;</span> {/* linkedin icon */}
-                <span class="font-medium">LinkedIn</span>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
+                <span class="lucide" aria-hidden="true">&#xe449;</span> <span class="font-medium">LinkedIn</span>
             </a>
-            {/* Add other contact methods like GitHub if desired */}
-             <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 flex items-center space-x-2">
-                <span class="lucide" aria-hidden="true">&#xe43e;</span> {/* github icon */}
-                <span class="font-medium">GitHub</span>
+            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 inline-flex items-center">
+                <span class="lucide" aria-hidden="true">&#xe43e;</span> <span class="font-medium">GitHub</span>
             </a>
-        </div>
+            </div>
     </div>
 </section>
 
@@ -260,12 +248,15 @@
   // Close mobile menu when a link is clicked
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-        menuButton.setAttribute('aria-expanded', 'false');
-        mobileMenu.classList.add('hidden');
-        openIcon.classList.remove('hidden');
-        openIcon.classList.add('block');
-        closeIcon.classList.add('hidden');
-        closeIcon.classList.remove('block');
+        // Ensure menu actually closes on link click
+        if (menuButton.getAttribute('aria-expanded') === 'true') {
+            menuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+            openIcon.classList.remove('hidden');
+            openIcon.classList.add('block');
+            closeIcon.classList.add('hidden');
+            closeIcon.classList.remove('block');
+        }
     });
   });
 
