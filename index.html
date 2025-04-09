@@ -70,7 +70,7 @@
       }
       /* Ensure hidden class works */
       .hidden {
-        display: none;
+        display: none !important; /* Add important to override potential conflicts */
       }
     </style>
 </head>
@@ -185,7 +185,7 @@
         </p>
         <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
             <a href="mailto:gaurang.slnk.007@gmail.com" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition duration-300 inline-flex items-center">
-                <span class="lucide" aria-hidden="true">&#xe330;</span><span class="font-medium">gaurang.slnk.007@gmail.com</span>
+                <span class="lucide" aria-hidden="true">&#xe330;</span><span class="font-medium">Gmail</span>
             </a>
             <a href="https://www.linkedin.com/in/gsoo7" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition duration-300 inline-flex items-center">
                 <span class="lucide" aria-hidden="true">&#xe449;</span><span class="font-medium">LinkedIn</span>
@@ -207,50 +207,64 @@
 <script>
   // Wait for the DOM to be fully loaded before running scripts
   document.addEventListener('DOMContentLoaded', () => {
+    // console.log("DOM fully loaded and parsed"); // Debug log
 
     // --- Dark Mode Logic ---
-    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn'); // Use class selector
-    const htmlElement = document.documentElement; // Target the <html> element
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+    const htmlElement = document.documentElement;
 
     // Function to update icon visibility based on mode
     const updateIcons = (isDarkMode) => {
+      // console.log(`Updating icons. Dark mode: ${isDarkMode}`); // Debug log
       themeToggleBtns.forEach(btn => {
         const sunIcon = btn.querySelector('.sun-icon');
         const moonIcon = btn.querySelector('.moon-icon');
-        if (sunIcon && moonIcon) { // Check if icons exist
+        if (sunIcon && moonIcon) {
           sunIcon.classList.toggle('hidden', isDarkMode);
           moonIcon.classList.toggle('hidden', !isDarkMode);
-          // console.log(`Icons updated: Dark mode is ${isDarkMode}`); // Debug log
         } else {
           // console.error("Sun or Moon icon not found in button:", btn); // Debug log
         }
       });
     };
 
-    // Function to apply the theme (dark or light)
+    // Function to apply the theme (dark or light) using explicit add/remove
     const applyTheme = (isDark) => {
-      htmlElement.classList.toggle('dark', isDark); // Add/remove 'dark' class
-      localStorage.setItem('theme', isDark ? 'dark' : 'light'); // Save preference
-      updateIcons(isDark); // Update icons on all buttons
-      // console.log(`Theme applied: ${isDark ? 'dark' : 'light'}`); // Debug log
+      // console.log(`Applying theme: ${isDark ? 'dark' : 'light'}`); // Debug log
+      if (isDark) {
+        htmlElement.classList.add('dark');
+        // console.log("Added 'dark' class to HTML element"); // Debug log
+      } else {
+        htmlElement.classList.remove('dark');
+        // console.log("Removed 'dark' class from HTML element"); // Debug log
+      }
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcons(isDark);
     };
 
     // Determine initial theme
     const userTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     let isInitiallyDark = userTheme === 'dark' || (userTheme === null && systemPrefersDark);
+    // console.log(`Initial check - User theme: ${userTheme}, System prefers dark: ${systemPrefersDark}, Setting dark: ${isInitiallyDark}`); // Debug log
 
     // Apply the initial theme
     applyTheme(isInitiallyDark);
 
     // Add click listener to all toggle buttons
-    themeToggleBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // console.log("Toggle button clicked!"); // Debug log
-        const isCurrentlyDark = htmlElement.classList.contains('dark');
-        applyTheme(!isCurrentlyDark); // Toggle the theme
+    if (themeToggleBtns.length > 0) {
+      themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // console.log("Toggle button clicked!"); // Debug log
+          const isCurrentlyDark = htmlElement.classList.contains('dark');
+          // console.log(`Currently dark: ${isCurrentlyDark}. Toggling to: ${!isCurrentlyDark}`); // Debug log
+          applyTheme(!isCurrentlyDark); // Toggle the theme
+        });
       });
-    });
+    } else {
+        // console.error("No theme toggle buttons found!"); // Debug log
+    }
+
 
     // --- AOS Initialization ---
     AOS.init({
@@ -267,26 +281,24 @@
     // --- Mobile Menu Toggle ---
     const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = menuButton?.querySelector('.hamburger-icon'); // Use specific class
-    const closeIcon = menuButton?.querySelector('.close-icon'); // Use specific class
+    const hamburgerIcon = menuButton?.querySelector('.hamburger-icon');
+    const closeIcon = menuButton?.querySelector('.close-icon');
 
     if (menuButton && mobileMenu && hamburgerIcon && closeIcon) {
         menuButton.addEventListener('click', () => {
             const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
             menuButton.setAttribute('aria-expanded', !isExpanded);
             mobileMenu.classList.toggle('hidden');
-            hamburgerIcon.classList.toggle('hidden'); // Toggle hamburger
-            hamburgerIcon.classList.toggle('block');
-            closeIcon.classList.toggle('hidden'); // Toggle close icon
-            closeIcon.classList.toggle('block');
+            hamburgerIcon.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('block'); // Ensure block is added back
+            closeIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('block'); // Ensure block is added back
         });
     } else {
         // console.error("Mobile menu elements not found!"); // Debug log
     }
 
-
     // --- Smooth Scrolling & Mobile Menu Close ---
-    // Select all nav links (desktop and mobile)
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
@@ -296,7 +308,7 @@
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
                 if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 64; // Navbar height offset (adjust if needed)
+                    const offsetTop = targetElement.offsetTop - 64; // Navbar height offset
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -307,7 +319,7 @@
             // Close mobile menu if open and a link is clicked
             if (menuButton && mobileMenu && !mobileMenu.classList.contains('hidden')) {
                  if (menuButton.getAttribute('aria-expanded') === 'true') {
-                    menuButton.click(); // Simulate click to toggle and close
+                    menuButton.click();
                  }
             }
         });
