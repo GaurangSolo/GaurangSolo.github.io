@@ -1,220 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gaurang Solanki's Hardware Engineering Portfolio</title>
-  <!-- SEO and Social Media Meta Tags -->
-  <meta name="description" content="Explore Gaurang Solanki's portfolio of professional hardware engineering projects, featuring schematics, PCB design, firmware development, and certifications.">
-  <meta name="keywords" content="Hardware Engineering, Engineering Projects, PCB Design, Firmware Development, CE FCC Certification, Product Development, Gaurang Solanki">
-  <meta name="author" content="Gaurang Solanki">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Gaurang Solanki's Hardware Engineering Portfolio">
-  <meta property="og:description" content="Explore professional hardware projects from schematics to certification by Gaurang Solanki.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop">
-  <meta property="og:url" content="https://your-portfolio-url.com">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gaurang Solanki's Hardware Engineering Portfolio">
-  <meta name="twitter:description" content="Explore professional hardware projects from schematics to certification by Gaurang Solanki.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- AOS Animation CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      padding-top: 70px;
-      background-color: #f4f7f9;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: url('https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop') center/cover no-repeat;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-    header .container {
-      position: relative;
-      z-index: 2;
-    }
-    header h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      animation: fadeInDown 1s ease-out;
-    }
-    header p.typing {
-      font-size: 1.3rem;
-      animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
-      overflow: hidden;
-      border-right: .15em solid white;
-      white-space: nowrap;
-      width: 0;
-      display: inline-block;
-    }
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-    section {
-      padding: 60px 0;
-    }
-    .card {
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 1s ease-in-out;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
-    footer {
-      background-color: #eef2f7;
-      padding: 20px 0;
-      text-align: center;
-      color: #777;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: white; }
-    }
-  </style>
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurang Solanki's Hardware Engineering Portfolio</title>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand" href="#">Hardware Projects</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+    <meta name="description" content="Explore Gaurang Solanki's portfolio of professional hardware engineering projects, featuring schematics, PCB design, firmware development, and certifications.">
+    <meta name="keywords" content="Hardware Engineering, Engineering Projects, PCB Design, Firmware Development, CE FCC Certification, Product Development, Gaurang Solanki">
+    <meta name="author" content="Gaurang Solanki">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gaurang Solanki's Hardware Engineering Portfolio">
+    <meta property="og:description" content="Explore professional hardware projects from schematics to certification by Gaurang Solanki.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <meta property="og:url" content="https://your-portfolio-url.com"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gaurang Solanki's Hardware Engineering Portfolio">
+    <meta name="twitter:description" content="Explore professional hardware projects from schematics to certification by Gaurang Solanki.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Optional: Configure Tailwind CSS
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'], // Use Inter font
+            },
+            keyframes: {
+              typing: {
+                'from': { width: '0' },
+                'to': { width: '100%' }
+              },
+              'blink-caret': {
+                'from, to': { borderColor: 'transparent' },
+                '50%': { borderColor: 'white' }
+              },
+              fadeInDown: {
+                 'from': { opacity: 0, transform: 'translateY(-20px)' },
+                 'to': { opacity: 1, transform: 'translateY(0)' }
+              },
+              fadeInUp: {
+                  'from': { opacity: 0, transform: 'translateY(20px)' },
+                  'to': { opacity: 1, transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              typing: 'typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite',
+              fadeInDown: 'fadeInDown 1s ease-out',
+              fadeInUp: 'fadeInUp 1s ease-in-out' // Used by AOS, but can be custom if needed
+            }
+          }
+        }
+      }
+    </script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+      @font-face {
+        font-family: 'LucideIcons';
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+      }
+      .lucide {
+        font-family: 'LucideIcons';
+        font-size: 1.25rem; /* Adjust icon size as needed */
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      /* Custom style for typing animation */
+      .typing-text {
+        display: inline-block;
+        overflow: hidden;
+        border-right: .15em solid white; /* Adjust color if needed */
+        white-space: nowrap;
+        width: 0;
+        animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+      }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans pt-16"> {/* Added padding-top for fixed navbar */}
+
+<nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a href="#" class="text-xl font-bold text-gray-900">Hardware Projects</a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <a href="#about" class="text-gray-600 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">About Me</a>
+          <a href="#projects" class="text-gray-600 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+          <a href="#contact" class="text-gray-600 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+        </div>
+      </div>
+      {/* Mobile Menu Button */}
+      <div class="-mr-2 flex md:hidden">
+        <button id="mobile-menu-button" type="button" class="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          {/* Icon when menu is closed. */}
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+          {/* Icon when menu is open. */}
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* Mobile menu, show/hide based on menu state. */}
+  <div class="md:hidden hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#about" class="text-gray-600 hover:bg-gray-200 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">About Me</a>
+      <a href="#projects" class="text-gray-600 hover:bg-gray-200 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+      <a href="#contact" class="text-gray-600 hover:bg-gray-200 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
     </div>
   </div>
 </nav>
 
-<!-- Header -->
-<header>
-  <div class="container">
-    <h1 class="display-1">Gaurang Solanki</h1>
-    <p class="lead typing">Hardware Engineer & Product Developer – Turning Concepts into Reality</p>
+<header class="relative bg-cover bg-center text-white py-24 px-4 sm:px-6 lg:px-8" style="background-image: url('https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+  {/* Overlay */}
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+  {/* Content */}
+  <div class="relative container mx-auto text-center z-10">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">Gaurang Solanki</h1>
+    <p class="text-lg sm:text-xl md:text-2xl">
+        <span class="typing-text">Hardware Engineer & Product Developer – Turning Concepts into Reality</span>
+    </p>
   </div>
 </header>
 
-<!-- About Section -->
-<section id="about">
-  <div class="container" data-aos="fade-up">
-    <h2 class="mb-4">About Me</h2>
-    <p>
+<section id="about" class="py-16 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">About Me</h2>
+    <p class="text-lg text-gray-700 mb-4 max-w-3xl mx-auto text-center">
       I'm a dedicated hardware engineer specializing in designing detailed schematics, crafting precise PCB layouts, and developing tailored firmware. I oversee the entire production process—from sourcing and collaborating with manufacturers in China to navigating regulatory certifications like CE, FCC, and ISED through accredited testing labs.
     </p>
-    <p>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center">
       Additionally, I create comprehensive documentation—including user manuals and assembly guides—to ensure that every product is as user-friendly as it is innovative.
     </p>
   </div>
 </section>
 
-<!-- Project Section -->
-<section id="projects" class="py-5 bg-light">
-  <div class="container" data-aos="fade-up">
-    <h2 class="mb-4">Projects</h2>
-    <div class="row">
-      <!-- Project 1: Smart Home Temperature and Humidity Monitor -->
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card">
-          <img src="project1.jpg" class="card-img-top" alt="Project 1 Image">
-          <div class="card-body">
-            <h5 class="card-title">Smart Home Temperature and Humidity Monitor</h5>
-            <p class="card-text">Using the STM32F4, this device monitors temperature and humidity with a DHT22 sensor and sends data to a mobile app via WiFi using an ESP8266.</p>
-            <p><strong>PCB Design:</strong> Integrated STM32F4, DHT22, and ESP8266.</p>
-            <p><strong>Schematic:</strong> Features connections for temperature, humidity sensor, and WiFi module.</p>
-            <p><strong>Firmware:</strong> Utilizes STM32 HAL for sensor interfacing and HTTP requests for cloud data transmission.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Project 2: IoT-Based Weather Station -->
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card">
-          <img src="project2.jpg" class="card-img-top" alt="Project 2 Image">
-          <div class="card-body">
-            <h5 class="card-title">IoT-Based Weather Station</h5>
-            <p class="card-text">This project uses an ESP32 to gather weather data from a BMP180 barometer and CCS811 air quality sensor, sending data to a cloud server via MQTT.</p>
-            <p><strong>PCB Design:</strong> ESP32 with BMP180 and CCS811 sensor integration.</p>
-            <p><strong>Schematic:</strong> Includes sensor connections and voltage level shifting for compatibility.</p>
-            <p><strong>Firmware:</strong> Written in Arduino IDE, implements MQTT protocol for cloud communication.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
+<section id="projects" class="py-16 bg-gray-100">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {/* Project 1 Card */}
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://placehold.co/600x400/e2e8f0/334155?text=Project+1+Image"
+             onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';"
+             class="w-full h-48 object-cover" alt="Smart Home Monitor Project Image">
+        <div class="p-6">
+          <h5 class="text-xl font-semibold mb-2 text-gray-900">Smart Home Temperature and Humidity Monitor</h5>
+          <p class="text-gray-700 text-sm mb-3">Using the STM32F4, this device monitors temperature and humidity with a DHT22 sensor and sends data to a mobile app via WiFi using an ESP8266.</p>
+          <p class="text-sm text-gray-600 mb-1"><strong>PCB Design:</strong> Integrated STM32F4, DHT22, and ESP8266.</p>
+          <p class="text-sm text-gray-600 mb-1"><strong>Schematic:</strong> Features connections for sensors and WiFi.</p>
+          <p class="text-sm text-gray-600 mb-3"><strong>Firmware:</strong> STM32 HAL for sensor interfacing, HTTP for cloud.</p>
+          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300">Learn More</a>
         </div>
       </div>
 
-      <!-- Project 3: Home Automation Relay Controller -->
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card">
-          <img src="project3.jpg" class="card-img-top" alt="Project 3 Image">
-          <div class="card-body">
-            <h5 class="card-title">Home Automation Relay Controller</h5>
-            <p class="card-text">An RP2040-based system that controls appliances via relays, using an RF remote control interface and safety mechanisms to prevent overheating.</p>
-            <p><strong>PCB Design:</strong> Integrated RP2040, 4 relays, and opto-isolators for safety.</p>
-            <p><strong>Schematic:</strong> Features relay control and power regulation circuits.</p>
-            <p><strong>Firmware:</strong> MicroPython code for relay control and WiFi communication.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
+      {/* Project 2 Card */}
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://placehold.co/600x400/dbeafe/1e3a8a?text=Project+2+Image"
+             onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';"
+             class="w-full h-48 object-cover" alt="IoT Weather Station Project Image">
+        <div class="p-6">
+          <h5 class="text-xl font-semibold mb-2 text-gray-900">IoT-Based Weather Station</h5>
+          <p class="text-gray-700 text-sm mb-3">This project uses an ESP32 to gather weather data from a BMP180 barometer and CCS811 air quality sensor, sending data to a cloud server via MQTT.</p>
+          <p class="text-sm text-gray-600 mb-1"><strong>PCB Design:</strong> ESP32 with BMP180 and CCS811 integration.</p>
+          <p class="text-sm text-gray-600 mb-1"><strong>Schematic:</strong> Includes sensor connections and level shifting.</p>
+          <p class="text-sm text-gray-600 mb-3"><strong>Firmware:</strong> Arduino IDE, MQTT protocol for cloud.</p>
+          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300">Learn More</a>
         </div>
       </div>
 
-      <!-- Add additional projects here -->
+      {/* Project 3 Card */}
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://placehold.co/600x400/ccfbf1/115e59?text=Project+3+Image"
+             onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';"
+             class="w-full h-48 object-cover" alt="Home Automation Relay Controller Project Image">
+        <div class="p-6">
+          <h5 class="text-xl font-semibold mb-2 text-gray-900">Home Automation Relay Controller</h5>
+          <p class="text-gray-700 text-sm mb-3">An RP2040-based system that controls appliances via relays, using an RF remote control interface and safety mechanisms.</p>
+          <p class="text-sm text-gray-600 mb-1"><strong>PCB Design:</strong> Integrated RP2040, 4 relays, opto-isolators.</p>
+          <p class="text-sm text-gray-600 mb-1"><strong>Schematic:</strong> Features relay control and power circuits.</p>
+          <p class="text-sm text-gray-600 mb-3"><strong>Firmware:</strong> MicroPython for relay control and WiFi.</p>
+          <a href="#" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300">Learn More</a>
+        </div>
+      </div>
+
+      {/* Add more project cards here following the same structure */}
 
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Gaurang Solanki. All rights reserved.</p>
+<section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">Contact Me</h2>
+        <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            Interested in collaborating or learning more about my work? Feel free to reach out!
+        </p>
+        <div class="flex justify-center items-center space-x-6">
+            {/* Replace '#' with actual links */}
+            <a href="mailto:your.email@example.com" class="text-indigo-600 hover:text-indigo-800 transition duration-300 flex items-center space-x-2">
+                <span class="lucide" aria-hidden="true">&#xe330;</span> {/* mail icon */}
+                <span class="font-medium">your.email@example.com</span>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 flex items-center space-x-2">
+                <span class="lucide" aria-hidden="true">&#xe449;</span> {/* linkedin icon */}
+                <span class="font-medium">LinkedIn</span>
+            </a>
+            {/* Add other contact methods like GitHub if desired */}
+             <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 transition duration-300 flex items-center space-x-2">
+                <span class="lucide" aria-hidden="true">&#xe43e;</span> {/* github icon */}
+                <span class="font-medium">GitHub</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<footer class="bg-gray-200 py-6">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
+    <p>&copy; <span id="current-year"></span> Gaurang Solanki. All rights reserved.</p>
+  </div>
 </footer>
 
-<!-- Bootstrap JS and AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init(); // Initialize AOS animations
+  // Initialize AOS animations
+  AOS.init({
+      duration: 800, // Animation duration
+      once: true, // Whether animation should happen only once - while scrolling down
+  });
+
+  // Set current year in footer
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+
+  // Mobile menu toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const openIcon = menuButton.querySelector('svg.block');
+  const closeIcon = menuButton.querySelector('svg.hidden');
+
+  menuButton.addEventListener('click', () => {
+    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('hidden');
+    openIcon.classList.toggle('hidden');
+    openIcon.classList.toggle('block');
+    closeIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('block');
+  });
+
+  // Close mobile menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuButton.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        openIcon.classList.add('block');
+        closeIcon.classList.add('hidden');
+        closeIcon.classList.remove('block');
+    });
+  });
+
 </script>
 </body>
 </html>
