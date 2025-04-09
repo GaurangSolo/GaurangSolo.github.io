@@ -36,7 +36,7 @@
       scroll-behavior: smooth;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1705579607342-13c6dad7b51d?q=80&w=1740&auto=format&fit=crop') center/cover no-repeat;
       color: white;
       padding: 60px 20px;
       text-align: center;
@@ -99,13 +99,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes floatUp {
-      0% { transform: translateY(10px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    .fade-in {
-      animation: floatUp 1s ease-out forwards;
-    }
     @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
@@ -118,37 +111,75 @@
 </head>
 <body>
 
-<!-- Project Section with AOS animation -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">Hardware Projects</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <h1 class="display-1">Gaurang Solanki</h1>
+    <p class="lead typing">Hardware Engineer & Product Developer – Turning Concepts into Reality</p>
+  </div>
+</header>
+
+<!-- About Section -->
+<section id="about">
+  <div class="container" data-aos="fade-up">
+    <h2 class="mb-4">About Me</h2>
+    <p>
+      I'm a dedicated hardware engineer specializing in designing detailed schematics, crafting precise PCB layouts, and developing tailored firmware. I oversee the entire production process—from sourcing and collaborating with manufacturers in China to navigating regulatory certifications like CE, FCC, and ISED through accredited testing labs.
+    </p>
+    <p>
+      Additionally, I create comprehensive documentation—including user manuals and assembly guides—to ensure that every product is as user-friendly as it is innovative.
+    </p>
+  </div>
+</section>
+
+<!-- Project Section -->
 <section id="projects" class="py-5 bg-light">
   <div class="container" data-aos="fade-up">
     <h2 class="mb-4">Projects</h2>
     <div class="row">
       <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
-          <img src="project1.jpg" class="card-img-top" alt="Project 1 Image">
+          <img src="project1.jpg" class="card-img-top" alt="Smart Environmental Monitor Image">
           <div class="card-body">
-            <h5 class="card-title">Project 1</h5>
-            <p class="card-text">A brief description of Project 1 showcasing schematics, PCB design, and firmware development.</p>
+            <h5 class="card-title">Smart Environmental Monitor</h5>
+            <p class="card-text">Designed and built a compact IoT device capable of measuring air quality, temperature, and humidity. The project involved schematic design, multi-layer PCB layout in Altium, and firmware development using STM32. Successfully passed CE and FCC pre-compliance testing, with robust enclosure integration for mass manufacturing.</p>
             <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
         <div class="card">
-          <img src="project2.jpg" class="card-img-top" alt="Project 2 Image">
+          <img src="project2.jpg" class="card-img-top" alt="Industrial Motor Controller Image">
           <div class="card-body">
-            <h5 class="card-title">Project 2</h5>
-            <p class="card-text">A brief description of Project 2 highlighting the production process and certification journey.</p>
+            <h5 class="card-title">Industrial Motor Controller</h5>
+            <p class="card-text">Engineered a high-power motor controller for industrial automation. Features include RS485 communication, overcurrent protection, and efficient heat dissipation via thermal simulations. Managed end-to-end production—from component sourcing in Shenzhen to certification testing with TÜV SÜD for CE compliance.</p>
             <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
         <div class="card">
-          <img src="project3.jpg" class="card-img-top" alt="Project 3 Image">
+          <img src="project3.jpg" class="card-img-top" alt="Wearable Health Tracker Image">
           <div class="card-body">
-            <h5 class="card-title">Project 3</h5>
-            <p class="card-text">A brief description of Project 3 including design innovations and documentation efforts.</p>
+            <h5 class="card-title">Wearable Health Tracker</h5>
+            <p class="card-text">Created a low-power wearable for continuous heart rate and SpO2 monitoring. This project involved integrating an ARM Cortex-M0+ MCU, designing a flexible PCB, and writing BLE-enabled firmware. Also authored multilingual user manuals and conducted user testing for UI optimization.</p>
             <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
@@ -157,7 +188,22 @@
   </div>
 </section>
 
-<!-- AOS Animation Init -->
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container" data-aos="fade-up">
+    <h2 class="mb-4">Contact Me</h2>
+    <p>Connect with me on <a href="https://www.linkedin.com/in/gsoo7" target="_blank">LinkedIn</a>.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2025 Gaurang Solanki. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
