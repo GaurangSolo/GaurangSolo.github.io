@@ -26,15 +26,15 @@
               sans: ['Inter', 'sans-serif'], // Define Inter font
             },
             keyframes: {
-              // Define keyframes for animations
-              typing: {'from': { width: '0' },'to': { width: '100%' }},
-              'blink-caret': {'from, to': { borderColor: 'transparent' },'50%': { borderColor: 'white' }},
+              // Removed 'typing' keyframes - JS handles typing
+              'blink-caret': {'from, to': { borderColor: 'transparent' },'50%': { borderColor: 'white' }}, // Keep for caret
               fadeInDown: {'from': { opacity: 0, transform: 'translateY(-20px)' },'to': { opacity: 1, transform: 'translateY(0)' }},
               fadeInUp: {'from': { opacity: 0, transform: 'translateY(20px)' },'to': { opacity: 1, transform: 'translateY(0)' }}
             },
             animation: {
-              // Apply animations - Reference this with 'animate-typing', 'animate-fadeInDown' etc.
-              typing: 'typing 3s steps(45, end) forwards, blink-caret 0.75s step-end infinite',
+              // Removed 'typing' animation utility
+              // Keep blink-caret if needed as utility, otherwise apply in CSS
+              // blinkCaret: 'blink-caret 0.75s step-end infinite', // Example utility name
               fadeInDown: 'fadeInDown 1s ease-out',
               fadeInUp: 'fadeInUp 1s ease-in-out'
             }
@@ -46,19 +46,21 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+      @keyframes blink-caret { /* Define keyframes directly here */
+        from, to { border-color: transparent }
+        50% { border-color: white; }
+      }
       .typing-text {
-        display: inline-block; /* Changed from block to inline-block if needed, or keep block */
-        overflow: hidden;
+        display: inline; /* Allow wrapping */
         border-right: .15em solid white; /* Typing caret */
-        /* white-space: nowrap; */ /* <-- REMOVED THIS LINE */
-        width: 0; /* Start with zero width */
-        vertical-align: bottom; /* Optional: Adjust alignment if needed after wrap */
-        /* Animation is applied via utility class 'animate-typing' from config */
+        vertical-align: bottom;
+        /* Apply blink animation directly */
+        animation: blink-caret 0.75s step-end infinite;
+        /* Removed width, overflow, white-space */
       }
       html.dark .typing-text {
-         border-right-color: white; /* Ensure caret is visible in dark mode */
+         border-right-color: white;
       }
-      /* Ensure hidden class works reliably */
       .hidden {
         display: none !important;
       }
@@ -118,8 +120,9 @@
   <div class="absolute inset-0 bg-black opacity-50"></div>
   <div class="relative container mx-auto text-center z-10">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">Gaurang Solanki</h1>
-    <p class="text-lg sm:text-xl md:text-2xl leading-relaxed"> <span class="typing-text animate-typing">Hardware Engineer & Product Developer – Turning Concepts into Reality...</span>
-    </p>
+    <p class="text-lg sm:text-xl md:text-2xl leading-relaxed">
+        <span id="typing-subtitle" class="typing-text"></span>
+        </p>
   </div>
 </header>
 
@@ -210,6 +213,35 @@
   document.addEventListener('DOMContentLoaded', () => {
     // console.log("DOM fully loaded and parsed");
 
+    // --- Typing Animation ---
+    const typingElement = document.getElementById('typing-subtitle');
+    const textToType = "Hardware Engineer & Product Developer – Turning Concepts into Reality...";
+    let typeIndex = 0;
+    let typingInterval;
+
+    function typeWriter() {
+      if (typingElement && typeIndex < textToType.length) {
+        typingElement.textContent += textToType.charAt(typeIndex);
+        typeIndex++;
+      } else {
+        clearInterval(typingInterval); // Stop the interval when done
+         // Optional: Remove cursor after typing finishes
+         // if (typingElement) {
+         //    typingElement.style.borderRight = 'none';
+         // }
+      }
+    }
+
+    // Start typing animation only if element exists
+    if (typingElement) {
+        typingElement.textContent = ''; // Clear initial content
+        typingInterval = setInterval(typeWriter, 75); // Adjust speed (milliseconds)
+    } else {
+        // console.error("Typing subtitle element not found!");
+    }
+
+
+    // --- Dark Mode Logic ---
     const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
     const htmlElement = document.documentElement;
 
@@ -259,16 +291,19 @@
          // console.error("No theme toggle buttons found!");
     }
 
+    // --- AOS Initialization ---
     AOS.init({
         duration: 800,
         once: true,
     });
 
+    // --- Footer Year ---
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
+    // --- Mobile Menu Toggle ---
     const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburgerIcon = menuButton?.querySelector('.hamburger-icon');
@@ -287,6 +322,7 @@
          // console.error("Mobile menu elements not found!");
     }
 
+    // --- Smooth Scrolling & Mobile Menu Close ---
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
