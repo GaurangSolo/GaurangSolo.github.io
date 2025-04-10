@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaurang Solanki's Embedded System Engineering Portfolio</title>
 
-    <meta name="description" content="Explore Gaurang Solanki's portfolio of professional embedded system engineering projects.">
-    <meta name="keywords" content="Embedded System Engineering, Engineering Projects, PCB Design, Firmware Development, CE FCC Certification, Product Development, Gaurang Solanki, FPGA, Verilog, Vivado, Artix-7, STM32, ESP32, RP2040, SHT31, ESP8266">
+    <meta name="description" content="Explore Gaurang Solanki's portfolio of professional embedded system engineering projects, showcasing skills in PCB design, firmware, RF, and debugging.">
+    <meta name="keywords" content="Embedded System Engineering, Engineering Projects, PCB Design, Firmware Development, CE FCC Certification, Product Development, Gaurang Solanki, FPGA, Verilog, Vivado, Artix-7, STM32, ESP32, RP2040, SHT31, ESP8266, Altium Designer, KiCad, MQTT, RF Debugging, C, C++, Python, MicroPython, ASK, FSK">
     <meta name="author" content="Gaurang Solanki">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Gaurang Solanki's Embedded System Engineering Portfolio">
@@ -135,12 +135,10 @@
 <section id="about" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">About Me</h2>
-    <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 max-w-3xl mx-auto text-center">
-      I'm a dedicated Embedded System Engineer specializing in designing detailed schematics, crafting precise PCB layouts, and developing tailored firmware. I oversee the entire production process—from sourcing and collaborating with manufacturers to navigating regulatory certifications like CE, FCC, and ISED through accredited testing labs. </p>
     <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-center">
-      Additionally, I create comprehensive documentation—including user manuals and assembly guides—to ensure that every product is as user-friendly as it is innovative.
+      Embedded System Engineer skilled in schematic design, PCB layout, and firmware development. Experienced in managing the full hardware product lifecycle: from component sourcing and manufacturer collaboration to navigating regulatory certifications (CE, FCC, ISED) and creating user-focused documentation.
     </p>
-  </div>
+    </div>
 </section>
 
 <section id="projects" class="py-16 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
@@ -154,8 +152,10 @@
           <h5 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">FPGA VGA & Retro Controller Interface (Work in Progress)</h5>
           <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">An ongoing project to learn FPGA development by implementing a system to read an NES controller and display a movable sprite on a VGA monitor.</p>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Target Hardware:</strong> Digilent Basys 3 (Artix-7 XC7A35T)</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Development Tools:</strong> Xilinx Vivado, Verilog</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Key Modules:</strong> VGA Timing, NES Interface, Sprite Logic</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Language/Tools:</strong> Verilog, Xilinx Vivado</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Tool Exp.:</strong> KiCad</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Debugging Tools:</strong> Vivado Simulator, Vivado Logic Analyzer (ILA)</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Skills Demonstrated:</strong> Verilog HDL, FPGA Development (Vivado), Digital Logic Design, VGA Timing, Simulation</p>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3"><strong>Status:</strong> In Progress (VGA timing module implemented)</p>
           <a href="https://github.com/GaurangSolo/verilog-vga-controller" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300 mt-auto self-start">View on GitHub</a>
         </div>
@@ -165,36 +165,42 @@
         <div class="p-6 flex flex-col flex-grow">
           <h5 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Smart Home Temperature & Humidity Monitor (Work in Progress)</h5>
           <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Developed a device using an STM32F103 microcontroller to monitor environmental conditions via an SHT31 (I2C) sensor. Data is relayed wirelessly using an ESP32 module (via UART AT commands) for display on a mobile app or cloud dashboard.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Design:</strong> Custom PCB integrating STM32F103, SHT31 sensor footprint, ESP32 module footprint, and power management.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Schematic:</strong> Included I2C connections for SHT31, UART interface for ESP32, and appropriate level shifting/power supplies.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Firmware:</strong> Developed using STM32 HAL (C/C++) for reading SHT31 via I2C and controlling ESP32 via UART AT commands (e.g., for MQTT/HTTP communication).</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Design Tool:</strong> Altium Designer</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Firmware Language:</strong> C/C++ (STM32 HAL)</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Wireless Protocol:</strong> WiFi via ESP32 (using AT commands for MQTT/HTTP)</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Debugging Tools:</strong> ST-Link Debugger (GDB), UART Serial Debug, Oscilloscope</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Skills Demonstrated:</strong> STM32 Firmware (HAL), I2C, UART, AT Command Interfacing, PCB Design (Altium), ESP32 Integration</p>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3"><strong>Status:</strong> In Progress (Core firmware structure defined)</p>
           <a href="https://github.com/GaurangSolo/Smart-Home-Temperature-Humidity-Monitor" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300 mt-auto self-start">View on GitHub</a>
         </div>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl flex flex-col" data-aos="fade-up" data-aos-delay="300">
-        <img src="https://placehold.co/600x400/dbeafe/1e3a8a?text=Project+2+Image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';" class="w-full h-48 object-cover" alt="Project 2 Placeholder Image">
+        <img src="https://placehold.co/600x400/dbeafe/1e3a8a?text=IoT+Weather+Station" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';" class="w-full h-48 object-cover" alt="IoT Weather Station Placeholder Image">
         <div class="p-6 flex flex-col flex-grow">
           <h5 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">IoT-Based Weather Station</h5>
-          <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">This project uses an ESP32 to gather weather data from a BMP180 barometer and CCS811 air quality sensor, sending data to a cloud server via MQTT.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Design:</strong> ESP32 with BMP180 and CCS811 integration.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Schematic:</strong> Includes sensor connections and level shifting.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3"><strong>Firmware:</strong> Arduino IDE, MQTT protocol for cloud.</p>
+           <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">This project uses an ESP32 to gather weather data from a BMP180 barometer and CCS811 air quality sensor, sending data to a cloud server via MQTT.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Design Tool:</strong> KiCad</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Firmware Language:</strong> C++ (Arduino Framework)</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Wireless Protocol:</strong> WiFi (MQTT)</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Debugging Tools:</strong> Arduino Serial Monitor, Multimeter, Oscilloscope</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3"><strong>Skills Demonstrated:</strong> ESP32 Firmware (Arduino), Sensor Integration (I2C), MQTT, PCB Design (KiCad), Cloud Communication</p>
           <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300 mt-auto self-start">Learn More</a>
         </div>
       </div>
-
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl flex flex-col" data-aos="fade-up" data-aos-delay="400"> <img src="https://placehold.co/600x400/ccfbf1/115e59?text=Project+3+Image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';" class="w-full h-48 object-cover" alt="Project 3 Placeholder Image">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl flex flex-col" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://placehold.co/600x400/ccfbf1/115e59?text=Relay+Controller" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';" class="w-full h-48 object-cover" alt="Home Automation Relay Controller Placeholder Image">
         <div class="p-6 flex flex-col flex-grow">
           <h5 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Home Automation Relay Controller</h5>
-          <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">An RP2040-based system that controls appliances via relays, using an RF remote control interface and safety mechanisms.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Design:</strong> Integrated RP2040, 4 relays, opto-isolators.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Schematic:</strong> Features relay control and power circuits.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3"><strong>Firmware:</strong> MicroPython for relay control and WiFi.</p>
+           <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">An RP2040-based system that controls appliances via relays, using an RF remote control interface and safety mechanisms.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Design Tool:</strong> Altium Designer</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Firmware Language:</strong> MicroPython</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Wireless Protocol:</strong> RF (433MHz ASK/FSK)</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Debugging Tools:</strong> MicroPython REPL, Oscilloscope, Logic Analyzer, Spectrum Analyzer</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>RF Troubleshooting:</strong> Tuned antenna matching circuit for optimum range and signal integrity using a spectrum analyzer.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3"><strong>Skills Demonstrated:</strong> RF Circuit Debugging, Antenna Tuning, Spectrum Analysis, MicroPython Firmware, PCB Design (Altium), Relay Control</p>
           <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300 mt-auto self-start">Learn More</a>
         </div>
       </div>
-
       </div>
   </div>
 </section>
