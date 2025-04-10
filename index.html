@@ -6,7 +6,8 @@
     <title>Gaurang Solanki's Hardware Engineering Portfolio</title>
 
     <meta name="description" content="Explore Gaurang Solanki's portfolio of professional hardware engineering projects.">
-    <meta name="keywords" content="Hardware Engineering, Engineering Projects, PCB Design, Firmware Development, CE FCC Certification, Product Development, Gaurang Solanki, FPGA, Verilog, Vivado, Artix-7, STM32, ESP32, RP2040"> <meta name="author" content="Gaurang Solanki">
+    <meta name="keywords" content="Hardware Engineering, Engineering Projects, PCB Design, Firmware Development, CE FCC Certification, Product Development, Gaurang Solanki, FPGA, Verilog, Vivado, Artix-7, STM32, ESP32, RP2040, SHT31, ESP8266">
+    <meta name="author" content="Gaurang Solanki">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Gaurang Solanki's Hardware Engineering Portfolio">
     <meta property="og:description" content="Explore professional hardware projects by Gaurang Solanki.">
@@ -161,14 +162,15 @@
         </div>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl flex flex-col" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://placehold.co/600x400/e2e8f0/334155?text=Project+1+Image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';" class="w-full h-48 object-cover" alt="Project 1 Placeholder Image">
+        <img src="https://placehold.co/600x400/e2e8f0/334155?text=Smart+Home+Monitor" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';" class="w-full h-48 object-cover" alt="Smart Home Monitor Placeholder Image">
         <div class="p-6 flex flex-col flex-grow">
-          <h5 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Smart Home Temperature and Humidity Monitor</h5>
-          <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Using the STM32F103, this device monitors temperature and humidity with a DHT22 sensor and sends data to a mobile app via WiFi using an ESP8266.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Design:</strong> Integrated STM32F103, DHT22, and ESP8266.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Schematic:</strong> Features connections for sensors and WiFi.</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3"><strong>Firmware:</strong> STM32 HAL (for STM32F103) for sensor interfacing, HTTP for cloud.</p>
-          <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300 mt-auto self-start">Learn More</a>
+          <h5 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Smart Home Temperature & Humidity Monitor (Work in Progress)</h5>
+          <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Developed a device using an STM32F103 microcontroller to monitor environmental conditions via an SHT31 (I2C) sensor. Data is relayed wirelessly using an ESP32 module (via UART AT commands) for display on a mobile app or cloud dashboard.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>PCB Design:</strong> Custom PCB integrating STM32F103, SHT31 sensor footprint, ESP32 module footprint, and power management.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Schematic:</strong> Included I2C connections for SHT31, UART interface for ESP32, and appropriate level shifting/power supplies.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Firmware:</strong> Developed using STM32 HAL (C/C++) for reading SHT31 via I2C and controlling ESP32 via UART AT commands (e.g., for MQTT/HTTP communication).</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3"><strong>Status:</strong> In Progress (Core firmware structure defined)</p>
+          <a href="https://github.com/GaurangSolo/Smart-Home-Temperature-Humidity-Monitor" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300 mt-auto self-start">View on GitHub</a>
         </div>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-xl flex flex-col" data-aos="fade-up" data-aos-delay="300">
@@ -385,4 +387,3 @@
 </script>
 </body>
 </html>
-```
